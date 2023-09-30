@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>mrBin</title>
+<style>
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table id="table">
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<script>
+let parent = document.querySelectorAll('#table td');
+
+for (let par of parent) {
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.textContent = 'del me';
+    par.appendChild(remove);
+    remove.addEventListener('click', function(e) {
+        par.remove();
+        e.preventDefault();
+    });
+}
+</script>
+</body>
+</html>
